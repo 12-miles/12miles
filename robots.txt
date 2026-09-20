@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://eaydi.org/sitemap.xml

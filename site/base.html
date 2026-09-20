@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{TITLE}}</title>
+<meta name="description" content="{{DESC}}">
+<meta name="theme-color" content="#0A0A0B">
+<meta name="author" content="Eunice Ameh Youth Development Initiative (EAYDI)">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="EAYDI">
+<meta property="og:title" content="{{TITLE}}">
+<meta property="og:description" content="{{DESC}}">
+<meta property="og:image" content="assets/img/{{OGIMG}}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{TITLE}}">
+<meta name="twitter:description" content="{{DESC}}">
+<meta name="twitter:image" content="assets/img/{{OGIMG}}">
+
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/favicon.svg">
+<link rel="canonical" href="{{CANON}}">
+
+<link rel="preload" href="assets/fonts/plus-jakarta-sans-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/bricolage-grotesque-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/fonts.css">
+<link rel="stylesheet" href="assets/css/styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NGO",
+  "name": "Eunice Ameh Youth Development Initiative",
+  "alternateName": "EAYDI",
+  "url": "{{CANON}}",
+  "logo": "assets/img/favicon.svg",
+  "description": "EAYDI empowers young people and women across Africa through education, leadership development, health promotion, economic empowerment and community engagement.",
+  "areaServed": "Nigeria",
+  "email": "hello@eaydi.org",
+  "sameAs": []
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <nav class="wrap nav" aria-label="Primary">
+    <a class="brand" href="index.html">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#FFC220" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="4.8" r="2.5" fill="#FFC220" stroke="none"/>
+          <path d="M12 9.2v6.6"/><path d="M5.6 7.6 12 10.1l6.4-2.5"/><path d="M8.2 21.2 12 15.8l3.8 5.4"/>
+        </svg>
+      </span>
+      <span class="brand__txt">
+        <span class="brand__name">EAYDI</span>
+        <span class="brand__sub">Youth Development</span>
+      </span>
+    </a>
+
+    <ul class="nav__links">
+{{NAV}}
+    </ul>
+
+    <div class="nav__cta">
+      <a class="btn btn--gold" href="get-involved.html">Get involved</a>
+    </div>
+
+    <button class="burger" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Menu">
+      <span></span>
+    </button>
+  </nav>
+</header>
+
+<div class="drawer" id="drawer">
+  <ul>
+{{DRAWER}}
+  </ul>
+  <a class="btn btn--gold" href="get-involved.html" style="width:100%">Get involved</a>
+</div>
+
+<main id="main">
+{{BODY}}
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a class="brand" href="index.html">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="4.8" r="2.5" fill="#0A0A0B" stroke="none"/>
+              <path d="M12 9.2v6.6"/><path d="M5.6 7.6 12 10.1l6.4-2.5"/><path d="M8.2 21.2 12 15.8l3.8 5.4"/>
+            </svg>
+          </span>
+          <span class="brand__txt">
+            <span class="brand__name">EAYDI</span>
+            <span class="brand__sub">Youth Development</span>
+          </span>
+        </a>
+        <p>Eunice Ameh Youth Development Initiative — building a generation of change-makers across Africa through education, leadership, health and economic empowerment.</p>
+        <div class="socials">
+          <a href="#" aria-label="EAYDI on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#" aria-label="EAYDI on X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.2 3h3.3l-7.2 8.2L22 21h-6.6l-5.2-6.4L4.3 21H1l7.7-8.8L1.4 3H8l4.7 5.9L17.2 3Zm-1.2 16h1.8L8.1 4.9H6.2L16 19Z"/></svg></a>
+          <a href="#" aria-label="EAYDI on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5ZM3 9.5h4V21H3V9.5Zm6.5 0h3.8v1.6h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.5 4.78 5.76V21h-4v-5.2c0-1.24-.02-2.84-1.9-2.84-1.9 0-2.2 1.36-2.2 2.75V21h-4V9.5Z"/></svg></a>
+          <a href="#" aria-label="EAYDI on Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5h1.65V3.62A22 22 0 0 0 14.3 3.5c-2.4 0-4.05 1.47-4.05 4.16V9.9H7.5V13h2.75v8h3.25Z"/></svg></a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="programmes.html">Programmes</a></li>
+          <li><a href="impact.html">Our impact</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Take action</h4>
+        <ul>
+          <li><a href="get-involved.html#volunteer">Volunteer</a></li>
+          <li><a href="get-involved.html#partner">Partner with us</a></li>
+          <li><a href="get-involved.html#donate">Donate</a></li>
+          <li><a href="contact.html">Contact us</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Reach us</h4>
+        <ul>
+          <li><a href="mailto:hello@eaydi.org">hello@eaydi.org</a></li>
+          <li><a href="tel:+2340000000000">+234 000 000 0000</a></li>
+          <li>Abuja, Nigeria</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <span>&copy; <span data-year>2026</span> Eunice Ameh Youth Development Initiative. All rights reserved.</span>
+      <span>Youth-centred. Community-led. Accountable.</span>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" type="button" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>
+</button>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
