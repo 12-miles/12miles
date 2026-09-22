@@ -454,6 +454,45 @@ body.no-scroll{overflow:hidden}
   font-family:var(--font-display);font-size:14rem;opacity:.16;line-height:1;pointer-events:none;
 }
 
+/* quote with a portrait alongside it */
+.quote--portrait{display:grid;gap:clamp(1.5rem,3.5vw,2.8rem);align-items:center}
+@media (min-width:720px){.quote--portrait{grid-template-columns:210px 1fr}}
+.quote--portrait::after{display:none}
+.quote__portrait{position:relative;margin:0;max-width:260px}
+.quote__portrait img{
+  width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 18%;
+  border-radius:var(--r-lg);box-shadow:0 22px 44px -22px rgba(10,10,11,.55);
+}
+.quote--portrait blockquote{font-size:var(--step-2)}
+
+/* ---------- 12b. Founder ---------- */
+.founder{display:grid;gap:clamp(2rem,5vw,4rem);align-items:center;grid-template-columns:1fr}
+@media (min-width:880px){.founder{grid-template-columns:minmax(260px,360px) 1fr}}
+.founder__photo{position:relative;margin:0}
+.founder__photo img{
+  width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 15%;
+  border-radius:var(--r-lg);box-shadow:var(--shadow-2);
+}
+.founder__photo::before{
+  content:"";position:absolute;inset:-16px auto auto -16px;
+  width:58%;height:52%;border:2px solid var(--gold);border-radius:var(--r-lg);
+  border-bottom:0;border-right:0;pointer-events:none;
+}
+.founder__photo img{position:relative;z-index:1}
+.founder__photo figcaption{
+  margin-top:1rem;font-size:.85rem;color:var(--muted);line-height:1.45;
+}
+.founder__photo figcaption b{display:block;font-family:var(--font-display);font-size:1.05rem;color:var(--text);letter-spacing:-.02em}
+.section--dark .founder__photo figcaption{color:var(--d-muted)}
+.section--dark .founder__photo figcaption b{color:var(--paper)}
+.founder__sig{
+  font-family:var(--font-display);font-size:1.15rem;font-weight:700;
+  letter-spacing:-.02em;margin-top:1.8rem;
+  border-left:3px solid var(--gold);padding-left:1.3rem;
+}
+.founder__sig span{display:block;font-family:var(--font-body);font-size:.82rem;font-weight:600;color:var(--muted);letter-spacing:.02em;margin-top:.15rem}
+.section--dark .founder__sig span{color:var(--d-muted)}
+
 /* ---------- 13. Gallery ---------- */
 .gal{display:grid;gap:.9rem;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
 .gal--feature{grid-template-columns:1fr}

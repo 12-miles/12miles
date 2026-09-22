@@ -142,16 +142,25 @@ supply:
 - [ ] **Giving amounts** — the four unit costs on `get-involved.html`
 - [ ] **Donation details** — bank account or payment link on `get-involved.html`
 - [ ] **Testimonials** — the three quotes on `impact.html` need real, consented ones
-- [ ] **Founder quote** — attributed to Eunice Ameh on the home page; confirm wording
+- [ ] **Founder bio** — the three paragraphs in the founder section on `about.html` are
+      written from EAYDI's stated values, not from Eunice Ameh. Replace with her own
+      words, and confirm both quotes attributed to her (home page and About)
 - [ ] **Partner list** — replace the text chips on the home page with real partners
 - [ ] **Form handling** — both forms currently show a message instead of sending.
       Point `action=` at Formspree, Netlify Forms or your own handler, then remove
       the `data-demo-form` attribute and the matching block in `assets/js/main.js`
 - [ ] **Logo** — `assets/img/favicon.svg` is a placeholder mark; swap in the real
       EAYDI logo and update the inline SVG in `site/base.html`
+- [ ] **Two photo gaps** — the Leadership Development and Economic Empowerment pillars
+      on `programmes.html` still borrow images from other programmes. A leadership
+      training or cohort photo, and a vocational training or woman-at-her-business
+      photo, would let each pillar stand on its own.
 
 ## Photo credits and consent
 
-Photographs are from the Combating Period Poverty outreach delivered with Youth
-Arise Africa. The gallery page states publicly that images are published with
-consent and will be removed on request — please honour that.
+Photographs come from two programmes: the Combating Period Poverty outreach
+delivered with Youth Arise Africa, and a school-based education programme. The
+portrait is of Eunice Ameh, founder.
+
+The gallery page states publicly that images are published with consent and will
+be removed on request — please honour that.
