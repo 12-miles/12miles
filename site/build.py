@@ -17,7 +17,7 @@ import struct
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SITE = ROOT / "site"
-SITE_URL = "https://eaydi.org/"
+SITE_URL = "https://12-miles.github.io/12miles/"
 
 # slug, nav label. The logo links home, so "Home" only appears in the mobile drawer.
 NAV = [
@@ -125,6 +125,7 @@ def main():
         meta, body = parse(page.read_text(encoding="utf-8"))
         html = base
         for token, value in {
+            "{{SITE}}": SITE_URL,
             "{{TITLE}}": meta.get("title", "EAYDI"),
             "{{DESC}}": meta.get("desc", ""),
             "{{OGIMG}}": meta.get("ogimg", "outreach-advocacy.jpg"),

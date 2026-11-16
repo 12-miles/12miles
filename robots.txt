@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://eaydi.org/sitemap.xml
+Sitemap: https://12-miles.github.io/12miles/sitemap.xml
