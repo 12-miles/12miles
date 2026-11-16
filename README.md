@@ -41,6 +41,11 @@ For **GitHub Pages**: Settings → Pages → deploy from branch, choose the bran
 the `/` (root) folder. The `.nojekyll` file is already there so Pages serves the
 files untouched.
 
+For **cPanel hosting (WhoGoHost and similar)**: upload everything except `site/`,
+`README.md` and `.git` into `public_html`, so that `index.html` sits directly inside
+`public_html`. The `.htaccess` file sets the 404 page, compression and caching; it also
+contains a ready-made "force https" block to switch on once the SSL certificate is active.
+
 After you have a real domain, update it in three places: `site/build.py`
 (`SITE_URL`), `robots.txt`, and `sitemap.xml`.
 
