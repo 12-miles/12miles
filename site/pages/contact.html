@@ -5,9 +5,10 @@ ogimg: outreach-advocacy.jpg
 nav: contact
 -->
 
-<section class="page-hero">
+<section class="page-hero page-hero--img">
+  <img class="page-hero__img" src="assets/img/thumbs/outreach-advocacy.jpg" alt="" loading="eager">
   <div class="wrap">
-    <p class="crumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Contact</p>
+    <nav class="crumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><span aria-current="page">Contact</span></nav>
     <p class="eyebrow eyebrow--pill">Contact</p>
     <h1>Let&rsquo;s talk.</h1>
     <p>Whether you want to bring a programme to your community, partner with us, volunteer or just ask a question &mdash; a real person will reply.</p>
@@ -21,7 +22,7 @@ nav: contact
       <h2>Tell us what you need</h2>
       <p class="lead">We reply to every message, usually within a few working days.</p>
 
-      <form class="form mt-m" data-demo-form novalidate>
+      <form class="form mt-m" data-form data-mailto="hello@eaydi.org" data-subject="Website enquiry" novalidate>
         <div class="field-row">
           <div class="field">
             <label for="c-name">Full name <span aria-hidden="true">*</span></label>
@@ -57,7 +58,7 @@ nav: contact
           <textarea id="c-msg" name="message" rows="6" required></textarea>
         </div>
 
-        <p class="form-status" role="status" hidden></p>
+        <p class="form-status" role="status" tabindex="-1" hidden></p>
 
         <button class="btn btn--gold" type="submit" style="justify-self:start">
           Send message
@@ -76,17 +77,12 @@ nav: contact
         </div>
         <h3>Email</h3>
         <p><a href="mailto:hello@eaydi.org">hello@eaydi.org</a><br>
-        <span class="muted">Partnerships:</span> <a href="mailto:partnerships@eaydi.org">partnerships@eaydi.org</a></p>
+        <span class="muted">We reply within a few working days.</span></p>
       </div>
 
-      <div class="card mt-s">
-        <div class="card__icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5c0-1 .8-1.8 1.8-1.8h2.1c.8 0 1.5.5 1.7 1.3l.8 2.7c.2.7 0 1.4-.6 1.8l-1.3 1a12.5 12.5 0 0 0 5.5 5.5l1-1.3c.4-.6 1.1-.8 1.8-.6l2.7.8c.8.2 1.3.9 1.3 1.7v2.1c0 1-.8 1.8-1.8 1.8A16.2 16.2 0 0 1 4 5Z"/></svg>
-        </div>
-        <h3>Phone &amp; WhatsApp</h3>
-        <p><a href="tel:+2340000000000">+234 000 000 0000</a><br>
-        <span class="muted">Monday&ndash;Friday, 9am&ndash;5pm WAT</span></p>
-      </div>
+      <!-- TODO PHONE: add a card here once there is a real number, e.g.
+      <div class="card mt-s"><h3>Phone &amp; WhatsApp</h3><p><a href="tel:+234XXXXXXXXXX">+234 XXX XXX XXXX</a></p></div>
+      -->
 
       <div class="card mt-s">
         <div class="card__icon" aria-hidden="true">
@@ -98,15 +94,13 @@ nav: contact
       </div>
 
       <div class="card mt-s" style="background:var(--ink);border-color:var(--ink)">
-        <h3 style="color:#fff">Follow the work</h3>
-        <p style="color:var(--d-muted)">Outreach announcements, volunteer calls and programme updates go out on social first.</p>
-        <div class="socials" style="margin-top:1rem">
-          <a href="#" aria-label="EAYDI on Instagram" style="color:var(--d-muted)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
-          <a href="#" aria-label="EAYDI on X" style="color:var(--d-muted)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.2 3h3.3l-7.2 8.2L22 21h-6.6l-5.2-6.4L4.3 21H1l7.7-8.8L1.4 3H8l4.7 5.9L17.2 3Zm-1.2 16h1.8L8.1 4.9H6.2L16 19Z"/></svg></a>
-          <a href="#" aria-label="EAYDI on LinkedIn" style="color:var(--d-muted)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5ZM3 9.5h4V21H3V9.5Zm6.5 0h3.8v1.6h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.5 4.78 5.76V21h-4v-5.2c0-1.24-.02-2.84-1.9-2.84-1.9 0-2.2 1.36-2.2 2.75V21h-4V9.5Z"/></svg></a>
-          <a href="#" aria-label="EAYDI on Facebook" style="color:var(--d-muted)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5h1.65V3.62A22 22 0 0 0 14.3 3.5c-2.4 0-4.05 1.47-4.05 4.16V9.9H7.5V13h2.75v8h3.25Z"/></svg>
-        </a>
-        </div>
+        <h3 style="color:#fff">Looking for something specific?</h3>
+        <ul class="linklist">
+          <li><a href="get-involved.html#volunteer">Volunteer with us</a></li>
+          <li><a href="get-involved.html#partner">Partner your organisation</a></li>
+          <li><a href="get-involved.html#donate">Make a donation</a></li>
+          <li><a href="programmes.html">Browse our programmes</a></li>
+        </ul>
       </div>
     </div>
   </div>

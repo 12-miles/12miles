@@ -13,19 +13,20 @@ No dependencies. Python 3.8+.
 
 import pathlib
 import re
+import struct
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SITE = ROOT / "site"
 SITE_URL = "https://eaydi.org/"
 
-# slug, nav label, short drawer hint
+# slug, nav label. The logo links home, so "Home" only appears in the mobile drawer.
 NAV = [
-    ("index", "Home", "01"),
-    ("about", "About", "02"),
-    ("programmes", "Programmes", "03"),
-    ("impact", "Impact", "04"),
-    ("gallery", "Gallery", "05"),
-    ("contact", "Contact", "06"),
+    ("about", "About"),
+    ("programmes", "Programmes"),
+    ("impact", "Impact"),
+    ("gallery", "Gallery"),
+    ("get-involved", "Get involved"),
+    ("contact", "Contact"),
 ]
 
 FRONT = re.compile(r"^<!--\s*(.*?)\s*-->\s*", re.S)
@@ -46,7 +47,7 @@ def parse(text):
 
 def nav_html(current):
     out = []
-    for slug, label, _ in NAV:
+    for slug, label in NAV:
         cur = ' aria-current="page"' if slug == current else ""
         out.append(f'      <li><a href="{slug}.html"{cur}>{label}</a></li>')
     return "\n".join(out)
@@ -54,12 +55,63 @@ def nav_html(current):
 
 def drawer_html(current):
     out = []
-    for slug, label, num in NAV:
+    for i, (slug, label) in enumerate([("index", "Home")] + NAV, start=1):
         cur = ' aria-current="page"' if slug == current else ""
         out.append(
-            f'    <li><a href="{slug}.html"{cur}>{label}<span>{num}</span></a></li>'
+            f'    <li><a href="{slug}.html"{cur}>{label}<span aria-hidden="true">{i:02d}</span></a></li>'
         )
     return "\n".join(out)
+
+
+def jpeg_size(path):
+    """Width and height of a JPEG, read from its header (no imaging library needed)."""
+    with open(path, "rb") as f:
+        data = f.read()
+    i = 2
+    while i < len(data):
+        if data[i] != 0xFF:
+            i += 1
+            continue
+        marker = data[i + 1]
+        if 0xC0 <= marker <= 0xCF and marker not in (0xC4, 0xC8, 0xCC):
+            h, w = struct.unpack(">HH", data[i + 5:i + 9])
+            return w, h
+        i += 2 + struct.unpack(">H", data[i + 2:i + 4])[0]
+    return None
+
+
+IMG = re.compile(r"<img\b[^>]*>")
+
+
+def enhance_images(html):
+    """Give every photo explicit dimensions (no layout shift), async decoding,
+    and a small/large srcset so phones do not download desktop-sized files."""
+
+    def fix(m):
+        tag = m.group(0)
+        src = re.search(r'src="(assets/img/[^"]+\.jpg)"', tag)
+        if not src:
+            return tag
+        path = ROOT / src.group(1)
+        if not path.exists():
+            return tag
+        size = jpeg_size(path)
+        extra = ""
+        if size:
+            tag = re.sub(r'\s(?:width|height)="\d+"', "", tag)
+            extra += f' width="{size[0]}" height="{size[1]}"'
+        if "decoding=" not in tag:
+            extra += ' decoding="async"'
+        thumb = ROOT / "assets/img/thumbs" / path.name
+        if "srcset=" not in tag and "/thumbs/" not in src.group(1) and thumb.exists() and size:
+            tw = jpeg_size(thumb)[0]
+            extra += (
+                f' srcset="assets/img/thumbs/{path.name} {tw}w, {src.group(1)} {size[0]}w"'
+                ' sizes="(min-width: 900px) 600px, 92vw"'
+            )
+        return tag[:-1].rstrip() + extra + ">"
+
+    return IMG.sub(fix, html)
 
 
 def main():
@@ -87,6 +139,7 @@ def main():
         if left:
             raise SystemExit(f"{slug}: unreplaced tokens {sorted(set(left))}")
 
+        html = enhance_images(html)
         (ROOT / f"{slug}.html").write_text(html, encoding="utf-8")
         print(f"  built {slug}.html  ({len(html):,} bytes)")
 

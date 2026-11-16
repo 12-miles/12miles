@@ -6,6 +6,7 @@
 <title>Get Involved — Volunteer, Partner or Donate | EAYDI</title>
 <meta name="description" content="Four ways to back EAYDI's work with young people and women: volunteer, partner your organisation, donate, or become an ambassador.">
 <meta name="theme-color" content="#0A0A0B">
+<meta name="color-scheme" content="light">
 <meta name="author" content="Eunice Ameh Youth Development Initiative (EAYDI)">
 
 <meta property="og:type" content="website">
@@ -18,6 +19,7 @@
 <meta name="twitter:description" content="Four ways to back EAYDI's work with young people and women: volunteer, partner your organisation, donate, or become an ambassador.">
 <meta name="twitter:image" content="assets/img/team-volunteers.jpg">
 
+<script>document.documentElement.classList.add("js")</script>
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/img/favicon.svg">
 <link rel="canonical" href="https://eaydi.org/get-involved.html">
@@ -47,10 +49,10 @@
 
 <header class="site-header">
   <nav class="wrap nav" aria-label="Primary">
-    <a class="brand" href="index.html">
+    <a class="brand" href="index.html" aria-label="EAYDI — home">
       <span class="brand__mark" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#FFC220" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="4.8" r="2.5" fill="#FFC220" stroke="none"/>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="4.8" r="2.5" fill="currentColor" stroke="none"/>
           <path d="M12 9.2v6.6"/><path d="M5.6 7.6 12 10.1l6.4-2.5"/><path d="M8.2 21.2 12 15.8l3.8 5.4"/>
         </svg>
       </span>
@@ -61,40 +63,49 @@
     </a>
 
     <ul class="nav__links">
-      <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="programmes.html">Programmes</a></li>
       <li><a href="impact.html">Impact</a></li>
       <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="get-involved.html" aria-current="page">Get involved</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
 
     <div class="nav__cta">
-      <a class="btn btn--gold" href="get-involved.html">Get involved</a>
+      <a class="btn btn--gold" href="get-involved.html#donate">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 20.7 4.6 13.6a4.9 4.9 0 0 1 0-7 5 5 0 0 1 7 0l.4.4.4-.4a5 5 0 0 1 7 0 4.9 4.9 0 0 1 0 7L12 20.7Z"/></svg>
+        Donate
+      </a>
     </div>
 
-    <button class="burger" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Menu">
+    <button class="burger" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Open menu">
       <span></span>
     </button>
   </nav>
+  <div class="progress" aria-hidden="true"></div>
 </header>
 
-<div class="drawer" id="drawer">
+<nav class="drawer" id="drawer" aria-label="Mobile">
   <ul>
-    <li><a href="index.html">Home<span>01</span></a></li>
-    <li><a href="about.html">About<span>02</span></a></li>
-    <li><a href="programmes.html">Programmes<span>03</span></a></li>
-    <li><a href="impact.html">Impact<span>04</span></a></li>
-    <li><a href="gallery.html">Gallery<span>05</span></a></li>
-    <li><a href="contact.html">Contact<span>06</span></a></li>
+    <li><a href="index.html">Home<span aria-hidden="true">01</span></a></li>
+    <li><a href="about.html">About<span aria-hidden="true">02</span></a></li>
+    <li><a href="programmes.html">Programmes<span aria-hidden="true">03</span></a></li>
+    <li><a href="impact.html">Impact<span aria-hidden="true">04</span></a></li>
+    <li><a href="gallery.html">Gallery<span aria-hidden="true">05</span></a></li>
+    <li><a href="get-involved.html" aria-current="page">Get involved<span aria-hidden="true">06</span></a></li>
+    <li><a href="contact.html">Contact<span aria-hidden="true">07</span></a></li>
   </ul>
-  <a class="btn btn--gold" href="get-involved.html" style="width:100%">Get involved</a>
-</div>
+  <div class="drawer__cta">
+    <a class="btn btn--gold" href="get-involved.html#volunteer">Volunteer</a>
+    <a class="btn btn--ghost-d" href="get-involved.html#partner">Partner with us</a>
+  </div>
+</nav>
 
-<main id="main">
-<section class="page-hero">
+<main id="main" tabindex="-1">
+<section class="page-hero page-hero--img">
+  <img class="page-hero__img" src="assets/img/thumbs/education-session-hall.jpg" alt="" loading="eager" width="900" height="600" decoding="async">
   <div class="wrap">
-    <p class="crumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Get involved</p>
+    <nav class="crumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><span aria-current="page">Get involved</span></nav>
     <p class="eyebrow eyebrow--pill">Get involved</p>
     <h1>Four ways in. Pick the one that fits.</h1>
     <p>Sustainable impact is achieved through partnership and collective action &mdash; it is one of our core values, and it is also just true.</p>
@@ -156,19 +167,19 @@
     <!-- PLACEHOLDER AMOUNTS — replace with EAYDI's actual unit costs -->
     <div class="stats" data-reveal>
       <div class="stat">
-        <b><em>&#8358;</em><span data-count="5000">0</span></b>
+        <b><em>&#8358;</em><span data-count="5000">5,000</span></b>
         <span>One reusable sanitary kit &mdash; lasting a girl multiple cycles</span>
       </div>
       <div class="stat">
-        <b><em>&#8358;</em><span data-count="25000">0</span></b>
+        <b><em>&#8358;</em><span data-count="25000">25,000</span></b>
         <span>A full set of learning materials for five students</span>
       </div>
       <div class="stat">
-        <b><em>&#8358;</em><span data-count="75000">0</span></b>
+        <b><em>&#8358;</em><span data-count="75000">75,000</span></b>
         <span>One school health education session, delivered end to end</span>
       </div>
       <div class="stat">
-        <b><em>&#8358;</em><span data-count="250000">0</span></b>
+        <b><em>&#8358;</em><span data-count="250000">250,000</span></b>
         <span>A complete community outreach with follow-up</span>
       </div>
     </div>
@@ -213,7 +224,7 @@
     </div>
 
     <div data-reveal>
-      <form class="form" data-demo-form novalidate>
+      <form class="form" data-form data-mailto="hello@eaydi.org" data-subject="Get involved" novalidate>
         <div class="field-row">
           <div class="field">
             <label for="gi-name">Full name <span aria-hidden="true">*</span></label>
@@ -259,7 +270,7 @@
           <textarea id="gi-msg" name="message" rows="5"></textarea>
         </div>
 
-        <p class="form-status" role="status" hidden></p>
+        <p class="form-status" role="status" tabindex="-1" hidden></p>
 
         <button class="btn btn--gold" type="submit" style="justify-self:start">
           Send my details
@@ -295,10 +306,10 @@
   <div class="wrap">
     <div class="footer__grid">
       <div class="footer__brand">
-        <a class="brand" href="index.html">
+        <a class="brand" href="index.html" aria-label="EAYDI — home">
           <span class="brand__mark" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="4.8" r="2.5" fill="#0A0A0B" stroke="none"/>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="4.8" r="2.5" fill="currentColor" stroke="none"/>
               <path d="M12 9.2v6.6"/><path d="M5.6 7.6 12 10.1l6.4-2.5"/><path d="M8.2 21.2 12 15.8l3.8 5.4"/>
             </svg>
           </span>
@@ -308,16 +319,20 @@
           </span>
         </a>
         <p>Eunice Ameh Youth Development Initiative — building a generation of change-makers across Africa through education, leadership, health and economic empowerment.</p>
+        <!-- TODO SOCIAL LINKS: add the real profile URLs, then uncomment. Links pointing at "#" were removed
+             because a link that goes nowhere is worse than no link.
         <div class="socials">
-          <a href="#" aria-label="EAYDI on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
-          <a href="#" aria-label="EAYDI on X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.2 3h3.3l-7.2 8.2L22 21h-6.6l-5.2-6.4L4.3 21H1l7.7-8.8L1.4 3H8l4.7 5.9L17.2 3Zm-1.2 16h1.8L8.1 4.9H6.2L16 19Z"/></svg></a>
-          <a href="#" aria-label="EAYDI on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5ZM3 9.5h4V21H3V9.5Zm6.5 0h3.8v1.6h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.5 4.78 5.76V21h-4v-5.2c0-1.24-.02-2.84-1.9-2.84-1.9 0-2.2 1.36-2.2 2.75V21h-4V9.5Z"/></svg></a>
-          <a href="#" aria-label="EAYDI on Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5h1.65V3.62A22 22 0 0 0 14.3 3.5c-2.4 0-4.05 1.47-4.05 4.16V9.9H7.5V13h2.75v8h3.25Z"/></svg></a>
+          <a href="https://instagram.com/YOUR-HANDLE" target="_blank" rel="noopener" aria-label="EAYDI on Instagram (opens in a new tab)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://x.com/YOUR-HANDLE" target="_blank" rel="noopener" aria-label="EAYDI on X (opens in a new tab)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.2 3h3.3l-7.2 8.2L22 21h-6.6l-5.2-6.4L4.3 21H1l7.7-8.8L1.4 3H8l4.7 5.9L17.2 3Zm-1.2 16h1.8L8.1 4.9H6.2L16 19Z"/></svg></a>
+          <a href="https://linkedin.com/company/YOUR-HANDLE" target="_blank" rel="noopener" aria-label="EAYDI on LinkedIn (opens in a new tab)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5ZM3 9.5h4V21H3V9.5Zm6.5 0h3.8v1.6h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.5 4.78 5.76V21h-4v-5.2c0-1.24-.02-2.84-1.9-2.84-1.9 0-2.2 1.36-2.2 2.75V21h-4V9.5Z"/></svg></a>
+          <a href="https://facebook.com/YOUR-HANDLE" target="_blank" rel="noopener" aria-label="EAYDI on Facebook (opens in a new tab)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5h1.65V3.62A22 22 0 0 0 14.3 3.5c-2.4 0-4.05 1.47-4.05 4.16V9.9H7.5V13h2.75v8h3.25Z"/></svg></a>
         </div>
+        -->
+        <a class="btn btn--gold footer__donate" href="get-involved.html#donate">Support our work</a>
       </div>
 
       <div>
-        <h4>Explore</h4>
+        <h2 class="footer__h">Explore</h2>
         <ul>
           <li><a href="about.html">About us</a></li>
           <li><a href="programmes.html">Programmes</a></li>
@@ -327,28 +342,33 @@
       </div>
 
       <div>
-        <h4>Take action</h4>
+        <h2 class="footer__h">Take action</h2>
         <ul>
           <li><a href="get-involved.html#volunteer">Volunteer</a></li>
           <li><a href="get-involved.html#partner">Partner with us</a></li>
           <li><a href="get-involved.html#donate">Donate</a></li>
-          <li><a href="contact.html">Contact us</a></li>
+          <li><a href="get-involved.html#ambassador">Become an ambassador</a></li>
         </ul>
       </div>
 
       <div>
-        <h4>Reach us</h4>
+        <h2 class="footer__h">Reach us</h2>
+        <!-- PLACEHOLDER CONTACT DETAILS: replace the email; add a phone line once there is a real number -->
         <ul>
           <li><a href="mailto:hello@eaydi.org">hello@eaydi.org</a></li>
-          <li><a href="tel:+2340000000000">+234 000 000 0000</a></li>
-          <li>Abuja, Nigeria</li>
+          <li><a href="contact.html">Send us a message</a></li>
+          <li><span>Abuja, Nigeria</span></li>
         </ul>
       </div>
     </div>
 
     <div class="footer__bottom">
       <span>&copy; <span data-year>2026</span> Eunice Ameh Youth Development Initiative. All rights reserved.</span>
-      <span>Youth-centred. Community-led. Accountable.</span>
+      <ul class="footer__legal">
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="gallery.html#consent">Photography &amp; consent</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </div>
   </div>
 </footer>

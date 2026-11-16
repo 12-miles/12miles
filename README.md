@@ -20,6 +20,7 @@ npm install.** Open `index.html` in a browser and it works.
 | `gallery.html` | Photo gallery with keyboard-navigable lightbox |
 | `get-involved.html` | Volunteer, partner, donate, ambassador + sign-up form |
 | `contact.html` | Contact form, details and FAQ |
+| `privacy.html` | Plain-language privacy notice (draft — see checklist) |
 | `404.html` | Not-found page |
 
 ## Running it locally
@@ -62,7 +63,8 @@ python3 site/build.py
 
 That takes the shared shell in `site/base.html` plus each body fragment in
 `site/pages/`, and regenerates every root `.html` file. Edit the shell once and
-all eight pages update together.
+all nine pages update together. It also gives every photo explicit dimensions and a
+small/large `srcset`, so phones do not download desktop-sized images.
 
 > If you use Option B, **edit `site/pages/*.html`, not the root files** — running
 > the build overwrites the root files.
@@ -88,7 +90,7 @@ index.html, about.html, …    the live site (generated, or edit directly)
 assets/css/styles.css        design tokens + all styles
 assets/css/fonts.css         self-hosted @font-face rules
 assets/fonts/                Bricolage Grotesque + Plus Jakarta Sans (woff2)
-assets/js/main.js            nav drawer, scroll reveal, counters, accordion, lightbox
+assets/js/main.js            mobile menu, reading progress, counters, accordion, photo viewer, form validation
 assets/img/                  full-size photos (max 1800px wide)
 assets/img/thumbs/           900px versions used in grids
 site/base.html               shared page shell
@@ -112,17 +114,40 @@ Change any colour once in the `:root` block of `assets/css/styles.css` and it
 updates everywhere. If you change `--gold-ink`, keep it at 4.5:1 or better against
 white.
 
-## Accessibility
+## Navigation and links
 
-Verified in-browser across all eight pages at desktop and mobile widths:
+- The logo links home; the header carries About, Programmes, Impact, Gallery, Get involved,
+  Contact and a **Donate** button that stays visible on phones.
+- Below 1060px the links move into a full-screen menu.
+- Every link is a plain relative `<a href>`, so the site works from any folder, on any
+  host, and with JavaScript switched off.
+- **There are no placeholder (`href="#"`) links.** If a destination does not exist yet,
+  the link is left out rather than faked — see the social-media and phone notes below.
 
-- All text meets **WCAG AA** contrast (alpha-composited backgrounds included)
-- Keyboard operable throughout — skip link, visible focus rings, `Escape` closes
-  the menu and lightbox, arrow keys move between photos, focus returns to the
-  element that opened a dialog
-- Every image has descriptive alt text
-- Honours `prefers-reduced-motion` — animations and count-ups are disabled
-- No horizontal scrolling at 390px
+## Forms
+
+Both forms validate in the browser (inline messages, focus moves to the first problem),
+then open the visitor's own email app with the message filled in, addressed to the
+form's `data-mailto`. No server is needed, so they work on any static host.
+
+To switch to a form service (Formspree, Netlify Forms…): give the `<form>` an `action`
+and `method`, and delete its `data-mailto` attribute. Validation keeps working.
+
+## Accessibility and quality
+
+Checked in a real browser on all nine pages, at desktop and phone sizes:
+
+- **Links:** every link is clicked through to its destination; anchor links land below
+  the sticky header, not under it
+- **Keyboard:** Tab reaches everything and never lands on something hidden; skip link,
+  visible focus rings, `Escape` closes the menu and photo viewer, arrow keys and swipe
+  move between photos, focus returns to where it started
+- **Contrast:** all text meets WCAG AA
+- **Touch:** interactive targets are at least 40px tall on phones
+- **Motion:** `prefers-reduced-motion` turns off animation, count-ups and page transitions
+- **No JavaScript:** all content is visible and every link works
+- **Layout:** no horizontal scrolling at 390px; images carry dimensions so the page does
+  not jump while loading
 
 Please keep these intact when editing.
 
@@ -133,10 +158,13 @@ Please keep these intact when editing.
 Search the HTML for `PLACEHOLDER` and `TODO` — each marks something only EAYDI can
 supply:
 
-- [ ] **Contact details** — email addresses, phone number, office address
-      (currently `hello@eaydi.org`, `+234 000 000 0000`, "Abuja, Nigeria")
-- [ ] **Social media links** — all currently `href="#"` in `site/base.html` and
-      `contact.html`
+- [ ] **Email address** — `hello@eaydi.org` is a placeholder. It appears in the footer,
+      the contact page, the privacy page and both forms' `data-mailto`. Search and replace
+      it everywhere, along with the office location ("Abuja, Nigeria")
+- [ ] **Social media links** — the icon row in the footer is commented out in
+      `site/base.html` until there are real profile URLs. Paste them in, uncomment, rebuild
+- [ ] **Phone number** — removed until there is a real one; a ready-made card is
+      commented out in `site/pages/contact.html`
 - [ ] **Impact figures** — the four counters on `impact.html` and three in the
       home hero are illustrative placeholders
 - [ ] **Giving amounts** — the four unit costs on `get-involved.html`
@@ -146,9 +174,10 @@ supply:
       written from EAYDI's stated values, not from Eunice Ameh. Replace with her own
       words, and confirm both quotes attributed to her (home page and About)
 - [ ] **Partner list** — replace the text chips on the home page with real partners
-- [ ] **Form handling** — both forms currently show a message instead of sending.
-      Point `action=` at Formspree, Netlify Forms or your own handler, then remove
-      the `data-demo-form` attribute and the matching block in `assets/js/main.js`
+- [ ] **Privacy notice** — `privacy.html` describes how this website actually behaves.
+      EAYDI should review it against its own obligations before launch
+- [ ] **Global goals** — the SDG mapping on `impact.html` is our reading of the mission;
+      confirm or edit
 - [ ] **Logo** — `assets/img/favicon.svg` is a placeholder mark; swap in the real
       EAYDI logo and update the inline SVG in `site/base.html`
 - [ ] **Two photo gaps** — the Leadership Development and Economic Empowerment pillars

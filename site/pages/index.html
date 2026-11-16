@@ -25,12 +25,6 @@ nav: index
         <a class="btn btn--ghost-d" href="programmes.html">See our programmes</a>
       </div>
 
-      <!-- PLACEHOLDER NUMBERS — replace with EAYDI's verified figures -->
-      <div class="hero__meta">
-        <div><b><span data-count="4200" data-suffix="+">0</span></b><span>Young people reached</span></div>
-        <div><b><span data-count="18">0</span></b><span>Community outreaches</span></div>
-        <div><b><span data-count="9">0</span></b><span>Partner organisations</span></div>
-      </div>
     </div>
 
     <div class="hero__media" data-reveal>
@@ -42,6 +36,15 @@ nav: index
         <span>Combating Period Poverty &mdash; menstrual health education and sanitary kit distribution in underserved communities.</span>
       </div>
     </div>
+  </div>
+  <!-- PLACEHOLDER NUMBERS — replace the first three with EAYDI's verified figures -->
+  <div class="wrap">
+    <dl class="hero__meta">
+      <div><dt>Young people and women reached</dt><dd><span data-count="4200" data-suffix="+">4,200+</span></dd></div>
+      <div><dt>Community outreaches delivered</dt><dd><span data-count="18">18</span></dd></div>
+      <div><dt>Partner organisations</dt><dd><span data-count="9">9</span></dd></div>
+      <div><dt>Programme pillars</dt><dd><span data-count="5">5</span></dd></div>
+    </dl>
   </div>
 </section>
 
@@ -107,6 +110,7 @@ nav: index
           <span class="card__num">01</span>
           <h3>Education &amp; Learning</h3>
           <p>Access to quality learning opportunities, mentorship, digital skills and academic support for young people who would otherwise fall through the gaps.</p>
+          <span class="card__more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
         </article>
       </a>
       <a class="card-link" href="programmes.html#leadership">
@@ -114,6 +118,7 @@ nav: index
           <span class="card__num">02</span>
           <h3>Leadership Development</h3>
           <p>Training, coaching and real platforms where young people practise leadership &mdash; not simulate it &mdash; and step into civic and community decision-making.</p>
+          <span class="card__more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
         </article>
       </a>
       <a class="card-link" href="programmes.html#health">
@@ -121,6 +126,7 @@ nav: index
           <span class="card__num">03</span>
           <h3>Health Promotion</h3>
           <p>Menstrual health and hygiene, sexual and reproductive health education, and the dignity kits that keep girls in school instead of at home.</p>
+          <span class="card__more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
         </article>
       </a>
       <a class="card-link" href="programmes.html#economic">
@@ -128,6 +134,7 @@ nav: index
           <span class="card__num">04</span>
           <h3>Economic Empowerment</h3>
           <p>Vocational and entrepreneurial skills, financial literacy and start-up support so young people and women can build livelihoods that last.</p>
+          <span class="card__more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
         </article>
       </a>
       <a class="card-link" href="programmes.html#community">
@@ -135,13 +142,15 @@ nav: index
           <span class="card__num">05</span>
           <h3>Community Engagement</h3>
           <p>Outreach, advocacy and dialogue that bring parents, schools, faith leaders and local government into the work &mdash; because change that isn&rsquo;t local doesn&rsquo;t hold.</p>
+          <span class="card__more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
         </article>
       </a>
       <a class="card-link" href="programmes.html">
         <article class="card" style="background:var(--ink);border-color:var(--ink)">
-          <span class="card__num" style="color:var(--gold)">&rarr;</span>
+          <span class="card__num" style="color:var(--gold)">All programmes</span>
           <h3 style="color:#fff">Explore every programme</h3>
           <p style="color:var(--d-muted)">Objectives, activities, who each one serves and how to take part.</p>
+          <span class="card__more" style="color:var(--gold)">View programmes <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
         </article>
       </a>
     </div>
@@ -289,7 +298,7 @@ nav: index
       <span class="partner">UBEC / SUBEB</span>
       <span class="partner">Community schools</span>
       <span class="partner">Local government partners</span>
-      <span class="partner">Volunteer network</span>
+      <a class="partner" href="get-involved.html#volunteer">Volunteer network</a>
     </div>
   </div>
 </section>
@@ -311,19 +320,3 @@ nav: index
   </div>
 </section>
 
-<!-- ============================ LIGHTBOX ============================ -->
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" aria-hidden="true">
-  <button class="lightbox__close" type="button" aria-label="Close viewer">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-  </button>
-  <button class="lightbox__nav lb-prev" type="button" aria-label="Previous photo">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
-  </button>
-  <button class="lightbox__nav lb-next" type="button" aria-label="Next photo">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-  </button>
-  <figure style="margin:0;display:grid;justify-items:center">
-    <img id="lightbox-img" src="" alt="">
-    <figcaption class="lightbox__cap" id="lightbox-cap"></figcaption>
-  </figure>
-</div>

@@ -5,9 +5,10 @@ ogimg: team-volunteers.jpg
 nav: gallery
 -->
 
-<section class="page-hero">
+<section class="page-hero page-hero--img">
+  <img class="page-hero__img" src="assets/img/thumbs/community-women.jpg" alt="" loading="eager">
   <div class="wrap">
-    <p class="crumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Gallery</p>
+    <nav class="crumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><span aria-current="page">Gallery</span></nav>
     <p class="eyebrow eyebrow--pill">Gallery</p>
     <h1>The work, without the gloss.</h1>
     <p>Photographs from our outreaches, education sessions and community programmes. Every image is published with the consent of the people in it.</p>
@@ -106,7 +107,7 @@ nav: gallery
   </div>
 </section>
 
-<section class="section section--dark section--tight">
+<section class="section section--dark section--tight" id="consent">
   <div class="wrap center">
     <h2 style="max-width:22ch;margin-inline:auto">Photography and consent</h2>
     <p class="lead mx-auto" style="max-width:60ch">
@@ -121,19 +122,3 @@ nav: gallery
   </div>
 </section>
 
-<!-- lightbox -->
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" aria-hidden="true">
-  <button class="lightbox__close" type="button" aria-label="Close viewer">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-  </button>
-  <button class="lightbox__nav lb-prev" type="button" aria-label="Previous photo">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
-  </button>
-  <button class="lightbox__nav lb-next" type="button" aria-label="Next photo">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-  </button>
-  <figure style="margin:0;display:grid;justify-items:center">
-    <img id="lightbox-img" src="" alt="">
-    <figcaption class="lightbox__cap" id="lightbox-cap"></figcaption>
-  </figure>
-</div>
