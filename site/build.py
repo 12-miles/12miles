@@ -17,7 +17,7 @@ import struct
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SITE = ROOT / "site"
-SITE_URL = "https://12-miles.github.io/12miles/"
+SITE_URL = "https://eaydi.com/"
 
 # slug, nav label. The logo links home, so "Home" only appears in the mobile drawer.
 NAV = [

@@ -163,7 +163,7 @@ Please keep these intact when editing.
 Search the HTML for `PLACEHOLDER` and `TODO` — each marks something only EAYDI can
 supply:
 
-- [ ] **Email address** — `hello@eaydi.org` is a placeholder. It appears in the footer,
+- [ ] **Email address** — `hello@eaydi.com` is a placeholder. It appears in the footer,
       the contact page, the privacy page and both forms' `data-mailto`. Search and replace
       it everywhere, along with the office location ("Abuja, Nigeria")
 - [ ] **Social media links** — the icon row in the footer is commented out in
